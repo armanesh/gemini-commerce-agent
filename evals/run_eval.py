@@ -2,7 +2,7 @@
 
 Usage:
   export GOOGLE_API_KEY=...            # or Vertex AI settings, see README
-  python -m evals.run_eval [--model gemini-2.5-flash] [--usd-per-m-input X --usd-per-m-output Y]
+  python -m evals.run_eval [--model gemini-3.8-flash] [--usd-per-m-input X --usd-per-m-output Y]
 """
 
 from __future__ import annotations

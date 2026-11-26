@@ -14,7 +14,7 @@ from mcp import StdioServerParameters
 from commerce_agent import guardrails
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 
 INSTRUCTION = """You help shoppers and store staff of a Dutch retailer with questions about products,
 prices, stock and promotions.
