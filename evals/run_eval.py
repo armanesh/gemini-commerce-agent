@@ -24,15 +24,22 @@ async def main(args) -> dict:
     cases = json.loads((HERE / "cases.json").read_text(encoding="utf-8"))
     service = AgentService(build_agent(args.model))
     scores = []
+    errors = []
     try:
         for case in cases:
-            _, result = await service.ask(case["question"])
+            try:
+                _, result = await service.ask(case["question"])
+            except Exception as e:  # record the failure and keep going
+                print(f"{case['id']:<20} ERROR {type(e).__name__}: {e}")
+                errors.append({"id": case["id"], "error": f"{type(e).__name__}: {e}"[:500]})
+                continue
             scores.append(score_case(case, result))
             print(f"{case['id']:<20} {'PASS' if scores[-1].passed else 'FAIL'}  {result.latency_s:.2f}s")
     finally:
         await service.close()
     summary = summarise(scores, args.usd_per_m_input, args.usd_per_m_output)
     summary["model"] = args.model
+    summary["errors"] = errors
     out = HERE / "results" / f"{time.strftime('%Y%m%d-%H%M%S')}_{args.model}.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
