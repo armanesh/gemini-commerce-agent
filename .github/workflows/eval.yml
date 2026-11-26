@@ -1,0 +1,35 @@
+name: eval
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["evals/cases.json", "evals/trigger.txt", "commerce_agent/**"]
+permissions:
+  contents: write
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    env:
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      GOOGLE_GENAI_USE_VERTEXAI: "FALSE"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Skip when no API key is set
+        if: env.GOOGLE_API_KEY == ''
+        run: echo "Add a GOOGLE_API_KEY repository secret to run the evaluation." 
+      - uses: actions/setup-python@v5
+        if: env.GOOGLE_API_KEY != ''
+        with:
+          python-version: "3.13"
+      - name: Run evaluation against Gemini
+        if: env.GOOGLE_API_KEY != ''
+        run: |
+          pip install -e .
+          python -m evals.run_eval
+      - name: Commit results
+        if: env.GOOGLE_API_KEY != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f evals/results/*.json
+          git commit -m "Evaluation results [skip ci]" && git push
