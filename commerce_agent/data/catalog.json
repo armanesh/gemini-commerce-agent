@@ -1,0 +1,24 @@
+{
+  "stores": ["AMS-CENTRAAL", "UTR-HOOG-CATHARIJNE", "RTM-LIJNBAAN"],
+  "products": [
+    {"sku": "SKN-101", "name": "Hydrating Day Cream 50 ml", "brand": "Verdant", "category": "skincare", "price_eur": 12.99, "tags": ["dry skin", "spf 15", "fragrance free"], "stock": {"AMS-CENTRAAL": 14, "UTR-HOOG-CATHARIJNE": 0, "RTM-LIJNBAAN": 6}},
+    {"sku": "SKN-102", "name": "Gentle Foaming Cleanser 150 ml", "brand": "Verdant", "category": "skincare", "price_eur": 8.49, "tags": ["sensitive skin", "fragrance free"], "stock": {"AMS-CENTRAAL": 22, "UTR-HOOG-CATHARIJNE": 9, "RTM-LIJNBAAN": 11}},
+    {"sku": "SKN-103", "name": "Vitamin C Serum 30 ml", "brand": "Lumen Lab", "category": "skincare", "price_eur": 24.95, "tags": ["dull skin", "antioxidant"], "stock": {"AMS-CENTRAAL": 3, "UTR-HOOG-CATHARIJNE": 7, "RTM-LIJNBAAN": 0}},
+    {"sku": "SKN-104", "name": "Mineral Sunscreen SPF 50 100 ml", "brand": "Lumen Lab", "category": "skincare", "price_eur": 16.50, "tags": ["spf 50", "sensitive skin", "water resistant"], "stock": {"AMS-CENTRAAL": 0, "UTR-HOOG-CATHARIJNE": 12, "RTM-LIJNBAAN": 4}},
+    {"sku": "HAI-201", "name": "Repair Shampoo 300 ml", "brand": "Noordkust", "category": "haircare", "price_eur": 6.99, "tags": ["damaged hair", "sulfate free"], "stock": {"AMS-CENTRAAL": 30, "UTR-HOOG-CATHARIJNE": 18, "RTM-LIJNBAAN": 25}},
+    {"sku": "HAI-202", "name": "Curl Defining Cream 200 ml", "brand": "Noordkust", "category": "haircare", "price_eur": 9.95, "tags": ["curly hair", "vegan"], "stock": {"AMS-CENTRAAL": 5, "UTR-HOOG-CATHARIJNE": 0, "RTM-LIJNBAAN": 2}},
+    {"sku": "HAI-203", "name": "Dry Scalp Treatment 100 ml", "brand": "Verdant", "category": "haircare", "price_eur": 11.25, "tags": ["dry scalp", "fragrance free"], "stock": {"AMS-CENTRAAL": 8, "UTR-HOOG-CATHARIJNE": 3, "RTM-LIJNBAAN": 0}},
+    {"sku": "SNK-301", "name": "Sea Salt Lentil Crisps 90 g", "brand": "Polder Snacks", "category": "snacks", "price_eur": 2.19, "tags": ["vegan", "gluten free"], "allergens": [], "stock": {"AMS-CENTRAAL": 60, "UTR-HOOG-CATHARIJNE": 45, "RTM-LIJNBAAN": 38}},
+    {"sku": "SNK-302", "name": "Dark Chocolate Almond Bar 40 g", "brand": "Polder Snacks", "category": "snacks", "price_eur": 1.79, "tags": ["high protein"], "allergens": ["nuts", "milk"], "stock": {"AMS-CENTRAAL": 80, "UTR-HOOG-CATHARIJNE": 0, "RTM-LIJNBAAN": 52}},
+    {"sku": "SNK-303", "name": "Oat and Honey Granola 400 g", "brand": "Morgenrood", "category": "snacks", "price_eur": 4.49, "tags": ["breakfast"], "allergens": ["gluten"], "stock": {"AMS-CENTRAAL": 19, "UTR-HOOG-CATHARIJNE": 27, "RTM-LIJNBAAN": 13}},
+    {"sku": "SNK-304", "name": "Roasted Chickpea Snack Paprika 120 g", "brand": "Polder Snacks", "category": "snacks", "price_eur": 2.49, "tags": ["vegan", "gluten free", "high protein"], "allergens": [], "stock": {"AMS-CENTRAAL": 0, "UTR-HOOG-CATHARIJNE": 16, "RTM-LIJNBAAN": 21}},
+    {"sku": "DRK-401", "name": "Sparkling Elderflower Lemonade 330 ml", "brand": "Morgenrood", "category": "drinks", "price_eur": 1.39, "tags": ["low sugar"], "allergens": [], "stock": {"AMS-CENTRAAL": 120, "UTR-HOOG-CATHARIJNE": 96, "RTM-LIJNBAAN": 74}},
+    {"sku": "DRK-402", "name": "Cold Brew Coffee Oat 250 ml", "brand": "Morgenrood", "category": "drinks", "price_eur": 2.95, "tags": ["vegan", "caffeine"], "allergens": ["gluten"], "stock": {"AMS-CENTRAAL": 33, "UTR-HOOG-CATHARIJNE": 0, "RTM-LIJNBAAN": 12}},
+    {"sku": "DRK-403", "name": "Ginger Kombucha 330 ml", "brand": "Polder Snacks", "category": "drinks", "price_eur": 2.29, "tags": ["vegan", "low sugar"], "allergens": [], "stock": {"AMS-CENTRAAL": 41, "UTR-HOOG-CATHARIJNE": 28, "RTM-LIJNBAAN": 0}}
+  ],
+  "promotions": [
+    {"sku": "SKN-102", "type": "percent_off", "value": 25, "valid_until": "2026-12-31", "description": "25% off the cleanser"},
+    {"sku": "SNK-301", "type": "multi_buy", "value": "2 for 3.50", "valid_until": "2026-12-15", "description": "2 bags for EUR 3.50"},
+    {"sku": "HAI-201", "type": "percent_off", "value": 10, "valid_until": "2026-11-30", "description": "10% off the shampoo"}
+  ]
+}
